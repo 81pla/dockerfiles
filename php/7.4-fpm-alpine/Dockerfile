@@ -74,4 +74,8 @@ RUN { \
 
 VOLUME /var/www/html
 
-CMD ["php-fpm && crond"]
+COPY docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["php-fpm"]
