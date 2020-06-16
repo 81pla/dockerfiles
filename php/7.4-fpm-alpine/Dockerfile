@@ -74,4 +74,4 @@ RUN { \
 
 VOLUME /var/www/html
 
-CMD ["php-fpm"]
+CMD ["php-fpm && crond"]
