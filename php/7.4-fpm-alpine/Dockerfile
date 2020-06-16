@@ -74,10 +74,7 @@ RUN { \
 
 VOLUME /var/www/html
 
-RUN { \
-        echo 'crond'; \
-    } > /usr/local/bin/docker-entrypoint.sh
-
+COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
