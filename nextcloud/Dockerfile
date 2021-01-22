@@ -9,9 +9,21 @@ RUN set -ex; \
         procps \
         smbclient \
         supervisor \
+        p7zip \
+        p7zip-full \
 #       libreoffice \
     ; \
     rm -rf /var/lib/apt/lists/*
+
+RUN set -ex; \
+    \
+    apt-get update; \
+    apt-get upgrade; \
+    apt-get install -y \
+        unrar \
+    ; \
+    rm -rf /var/lib/apt/lists/*
+
 
 RUN set -ex; \
     \
