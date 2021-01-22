@@ -17,16 +17,6 @@ RUN set -ex; \
 
 RUN set -ex; \
     \
-    apt-get update; \
-    apt-get upgrade; \
-    apt-get install -y \
-        unrar \
-    ; \
-    rm -rf /var/lib/apt/lists/*
-
-
-RUN set -ex; \
-    \
     savedAptMark="$(apt-mark showmanual)"; \
     \
     apt-get update; \
@@ -44,6 +34,8 @@ RUN set -ex; \
     ; \
     pecl install smbclient; \
     docker-php-ext-enable smbclient; \
+    pecl -v install rar; \
+    docker-php-ext-enable rar; \
     \
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
     apt-mark auto '.*' > /dev/null; \
