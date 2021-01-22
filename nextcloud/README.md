@@ -1,6 +1,6 @@
 # Nextcloud section
 
-In this folders, is example how to use the docker image. 
+In this folder, is example how to build full dependencies nextcloud docker image.
 
 - Dockerfile
 - supervisord.conf
